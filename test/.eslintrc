@@ -1,0 +1,24 @@
+{
+  "plugins": [
+    "mocha-cleanup"
+  ],
+  "globals": {
+    "describe": true,
+    "context": true,
+    "it": true,
+    "beforeEach": true
+  },
+  "rules": {
+    "mocha-cleanup/asserts-limit": 2,
+    "mocha-cleanup/no-empty-title": 2,
+    "mocha-cleanup/no-same-titles": 2,
+    "mocha-cleanup/no-nested-it": 2,
+    "mocha-cleanup/no-assertions-outside-it": 2,
+    "mocha-cleanup/complexity-it": 2,
+    "mocha-cleanup/no-eql-primitives": 2,
+    "mocha-cleanup/no-assertions-in-loop": 2,
+    "mocha-cleanup/no-empty-body": 2,
+    "mocha-cleanup/invalid-assertions": 2,
+    "mocha-cleanup/no-expressions-in-assertions": 2
+  }
+}
