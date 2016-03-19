@@ -1,12 +1,13 @@
 import chai from 'chai';
+import assign from 'object-assign';
 import eemit from '../src/eemit.js';
 
 const assert = chai.assert;
 
-
 describe('Eemit', () => {
   context('Error handling', () => {
     const typeErrorMessage = 'Eemit can only be composed with objects or functions';
+    const typeCallbackErrorMessage = 'Callback must be a function';
 
     describe('TypeErrors', () => {
       it('should not throw for no arguments', () => {
@@ -27,6 +28,24 @@ describe('Eemit', () => {
       it('should not throw for array', () => {
         const compound = () => eemit([]);
         assert.doesNotThrow(compound, TypeError, typeErrorMessage);
+      });
+
+      it('factory().on should throw when handler is missing', () => {
+        const compound = eemit();
+        const handler = () => compound.on('some-event');
+        assert.throws(handler, TypeError, typeCallbackErrorMessage);
+      });
+
+      it('factory().once should throw when handler is of wrong type', () => {
+        const compound = eemit();
+        const handler = () => compound.on('some-event', '');
+        assert.throws(handler, TypeError, typeCallbackErrorMessage);
+      });
+
+      it('factory().off should throw when handler is of wrong type', () => {
+        const compound = eemit();
+        const handler = () => compound.off('some-event', {});
+        assert.throws(handler, TypeError, typeCallbackErrorMessage);
       });
     });
   });
@@ -70,7 +89,7 @@ describe('Eemit', () => {
     },
     {
       name: 'Object',
-      getCounter: () => eemit(Object.assign({}, objectCounter)),
+      getCounter: () => eemit(assign({}, objectCounter)),
     },
     {
       name: 'empty Object (decorated later)',

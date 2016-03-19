@@ -1,5 +1,6 @@
 {
   "plugins": [
+    "mocha",
     "mocha-cleanup"
   ],
   "globals": {
@@ -9,6 +10,10 @@
     "beforeEach": true
   },
   "rules": {
+    "func-names": 0,
+    "prefer-arrow-callback": 0,
+    "mocha/no-global-tests": 2,
+    "mocha/no-exclusive-tests": 2,
     "mocha-cleanup/asserts-limit": 2,
     "mocha-cleanup/no-empty-title": 2,
     "mocha-cleanup/no-same-titles": 2,

@@ -2,6 +2,10 @@
   "presets": ["es2015"],
   "plugins": [
     "add-module-exports",
-    ["transform-es2015-modules-commonjs", {"allowTopLevelThis": true}]
+    "transform-es2015-modules-umd",
+    "transform-es2015-object-super",
+    "transform-es2015-block-scoping",
+    ["transform-es2015-classes", { loose: true }],
+    "transform-proto-to-assign"
   ]
 }
