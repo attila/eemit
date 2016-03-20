@@ -2,6 +2,7 @@
 .codeclimate.yml
 .eslintignore
 .eslintrc
+.idea
 .travis.yml
 coverage
 karma.config.js
