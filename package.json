@@ -8,7 +8,11 @@
   "bugs": {
     "url": "https://github.com/attila/eemit/issues"
   },
-  "main": "src/eemit.js",
+  "main": "dist/eemit.min.js",
+  "jsnext:main": "src/eemit.js",
+  "engines": {
+    "node": ">=0.12.0"
+  },
   "scripts": {
     "build:babel": "babel src/eemit.js --no-comments -s true -o dist/eemit.js",
     "build:uglify": "uglifyjs dist/eemit.js -m --source-map dist/eemit.min.js.map --in-source-map dist/eemit.js.map --screw-ie8 -o dist/eemit.min.js",
@@ -31,10 +35,13 @@
     "babel-istanbul-loader": "^0.1.0",
     "babel-loader": "^6.2.4",
     "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-transform-es2015-block-scoping": "^6.7.1",
+    "babel-plugin-transform-es2015-classes": "^6.6.5",
     "babel-plugin-transform-es2015-modules-umd": "^6.6.5",
     "babel-plugin-transform-es2015-object-super": "^6.6.5",
     "babel-plugin-transform-proto-to-assign": "^6.6.5",
     "babel-preset-es2015": "^6.6.0",
+    "babel-register": "^6.7.2",
     "chai": "^3.5.0",
     "codeclimate-test-reporter": "^0.3.1",
     "eslint": "^2.4.0",
@@ -45,7 +52,6 @@
     "estraverse-fb": "^1.3.1",
     "karma": "^0.13.22",
     "karma-babel-preprocessor": "^6.0.1",
-    "karma-chrome-launcher": "^0.2.2",
     "karma-coverage": "^0.5.5",
     "karma-mocha": "^0.2.2",
     "karma-sauce-launcher": "^0.3.1",
@@ -53,7 +59,7 @@
     "karma-webpack": "^1.7.0",
     "mocha": "^2.4.5",
     "object-assign": "^4.0.1",
-    "uglify": "^0.1.5",
+    "uglify-js": "^2.6.2",
     "webpack": "^1.12.14"
   }
 }

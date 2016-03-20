@@ -1,0 +1,9 @@
+.babelrc
+.codeclimate.yml
+.eslintignore
+.eslintrc
+.travis.yml
+coverage
+karma.config.js
+sauce.json
+test

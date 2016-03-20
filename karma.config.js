@@ -17,65 +17,62 @@ module.exports = function(config) {
   var sauceLaunchers = {
     SL_Chrome_latest: {
       base: 'SauceLabs',
-      browserName: 'Chrome',
+      browserName: 'chrome',
       version: 'latest'
     },
     SL_Chrome_41: {
       base: 'SauceLabs',
-      browserName: 'Chrome',
+      browserName: 'chrome',
       version: '41',
     },
     SL_FireFox_latest: {
       base: 'SauceLabs',
-      browserName: 'Firefox',
+      browserName: 'firefox',
       version: 'latest',
     },
     SL_Edge: {
       base: 'SauceLabs',
       platform: 'Windows 10',
       browserName: 'microsoftedge',
-      version: 'latest',
     },
     SL_IE_11: {
       base: 'SauceLabs',
-      browserName: 'Internet Explorer',
+      browserName: 'internet explorer',
       version: '11',
     },
     SL_IE_10: {
       base: 'SauceLabs',
-      browserName: 'Internet Explorer',
+      browserName: 'internet explorer',
       version: '10',
     },
     SL_IE_9: {
       base: 'SauceLabs',
-      browserName: 'Internet Explorer',
+      browserName: 'internet explorer',
       version: '9',
     },
     SL_Opera_latest: {
       base: 'SauceLabs',
-      browserName: 'Opera',
+      browserName: 'opera',
       version: 'latest',
     },
-    SL_Safari_latest: {
+    SL_Safari_7: {
       base: 'SauceLabs',
-      browserName: 'Safari',
-      version: 'latest',
-      platform: 'OS X 10.11',
+      browserName: 'safari',
+      version: '7',
+      platform: 'OS X 10.9',
     },
-    SL_iOS_latest: {
+    SL_Mobile_Safari_8: {
       base: 'SauceLabs',
       browserName: 'iphone',
-      version: '9',
+      platform: "OS X 10.10",
+      deviceName: 'iPhone 5s',
+      version: '8.4',
     },
-    Android_latest: {
+    SL_Android_4: {
       base: 'SauceLabs',
       browserName: 'android',
-    },
-    'SL_Android_4.4': {
-      base: 'SauceLabs',
-      browserName: 'android',
-      'appium-version': '1.0',
-      deviceName: 'Android',
+      deviceName: 'Android Emulator',
+      deviceType: 'phone',
       platform: 'Linux',
       version: '4.4',
     },

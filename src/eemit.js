@@ -4,8 +4,9 @@
  * @module Eemit
  * @param {object|function} target Target to decorate with event
  *   emitting capabilities. Can be a simple object, an instantiated class or a
- *   constructor function. Optional.
- * @returns {function}
+ *   constructor function. Returns a
+ * @returns {function} Factory function or extended constructor depending on the
+ *   argument.
  */
 export default target => {
   let eemit;
@@ -60,8 +61,9 @@ export default target => {
    * Detach event handler
    *
    * @param {string} name Name of event
-   * @param {function} callback Event handler to remove. When omitted, removed
-   *   all eemit handlers
+   * @param {function} callback Event handler to remove. Removes all handlers
+   *   from the event When omitted
+   *   all handlers
    * @returns {object|function} Returns itself
    */
   eemit.off = function off(name, callback) {
@@ -81,7 +83,7 @@ export default target => {
    * Attach handler to be fired only once
    *
    * @param {string} name Name of event
-   * @param {function} callback
+   * @param {function} callback Event handler to attach
    * @returns {object|function} Returns itself
    */
   eemit.once = function once(name, callback) {
@@ -95,7 +97,8 @@ export default target => {
    * Trigger events
    *
    * @param {string} name Name of event
-   * @param {arguments} args The remainder of arguments
+   * @param {arguments} args The remainder of arguments. Any arguments given
+   *   here are passed along to the handler.
    * @returns {object|function} Returns itself
    */
   eemit.trigger = function trigger(name, ...args) {
