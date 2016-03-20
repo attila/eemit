@@ -1,6 +1,6 @@
 {
   "name": "eemit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Event emitter micro library for Node and the browser",
   "author": "Attila Beregszaszi <attila@frontseed.com> (http://attilab.com)",
   "license": "MIT",
